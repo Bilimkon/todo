@@ -1,0 +1,19 @@
+<div class="container" style="margin-top: 20%; padding: 20px">
+  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()" class="card-box">
+    <div class="row">
+      <div class="col card" style="padding: 20px">
+        <label>
+          <input class="form-control" placeholder="Title" formControlName="title">
+        </label>
+        <label>
+          <input class="form-control" placeholder="Content" formControlName="content">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" style="padding-top: 10px">
+        <button class="btn btn-primary" (click)="onSubmit()" mat-raised-button type="button">Add</button>
+      </div>
+    </div>
+  </form>
+</div>

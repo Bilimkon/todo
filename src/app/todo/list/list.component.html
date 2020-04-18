@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col card" style="margin-top: 5%">
+      <h3 class="text-center">My todo list</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col card">
+      <mat-accordion multi="true">
+        <mat-expansion-panel *ngFor="let to of todo">
+          <mat-expansion-panel-header>
+            Title: {{ to.title }}----<p *ngIf="to.done === true ">Done</p>
+          </mat-expansion-panel-header>
+          <ul class="list-group" style="margin: 5px">
+            <li class="list-group-item">
+              <mat-checkbox
+              [(ngModel)]="to.done">
+            </mat-checkbox> Done</li>
+            <li class="list-group-item">Date: {{to.date}}</li>
+            <li class="list-group-item"><textarea style="margin: 5px" readonly class="form-control">{{to.content}}</textarea></li>
+          </ul>
+          <mat-action-row>
+            <a mat-button color="primary" [routerLink]="['/edit', to._id]">EDIT</a>
+            <button mat-button color="warn" class="btn btn-danger" (click)="onDelete(to._id)">Delete</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <button mat-raised-button class="btn btn-primary" (click)="addTodo()">Add new</button>
+  </div>
+  <p>Numbers of my todo: {{todo.length}}</p>
+</div>
