@@ -8,4 +8,4 @@ This is example Todo project in MEAN stack. Mongodb database name is erp or you 
 ##
 3.Download or clone app from github and  run command npm install in Git Bash.
 ##
-4 Run npm ishla to run nodejs server and  run ng serve to run angular server Enjoy it.
+4 Run npm ishla to run nodejs server and  run ng serve to run angular server.
